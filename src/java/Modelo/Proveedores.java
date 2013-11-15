@@ -1,6 +1,6 @@
 package Modelo;
 
-public class Proveedores {
+public class Proveedores{
     private int prov_codigo;
     private String prov_razon_social;
     private String prov_nombre;
@@ -14,6 +14,11 @@ public class Proveedores {
     public Proveedores() {
     }
 
+    public Proveedores(int prov_codigo, String prov_nombre) {
+        this.prov_codigo = prov_codigo;
+        this.prov_nombre = prov_nombre;
+    }
+
     public Proveedores(int prov_codigo, String prov_razon_social, String prov_nombre, String prov_direccion, String prov_telefono1, String prov_telefono2, String prov_email, String prov_web) {
         this.prov_codigo = prov_codigo;
         this.prov_razon_social = prov_razon_social;
@@ -24,7 +29,8 @@ public class Proveedores {
         this.prov_email = prov_email;
         this.prov_web = prov_web;
     }
-    
+
+        
     //Getter & Setter
     public int getProv_codigo() {
         return prov_codigo;

@@ -1,6 +1,6 @@
 package Modelo;
 
-public class Productos  extends Marcas{
+public class Productos extends Marcas{
   //Atributos
     private int pro_codigo_interno;
     private int pro_codigo_barra;
@@ -32,8 +32,8 @@ public class Productos  extends Marcas{
         this.pro_stock_me = pro_stock_me;
     }
 
-    public Productos(int pro_codigo_interno, int pro_codigo_barra, String pro_nombre, String pro_descripcion, float pro_precio_c, float pro_margen_utilidad_ma, float pro_margen_utilidad_me, int pro_precio_venta_ma, int pro_precio_venta_me, int pro_stock_ma, int pro_stock_me, int mar_codigo, String mar_nombre, int tipo_codigo, String tipo_nombre, int cat_codigo, String cat_nombre) {
-        super(mar_codigo, mar_nombre, tipo_codigo, tipo_nombre, cat_codigo, cat_nombre);
+    public Productos(int pro_codigo_interno, int pro_codigo_barra, String pro_nombre, String pro_descripcion, float pro_precio_c, float pro_margen_utilidad_ma, float pro_margen_utilidad_me, int pro_precio_venta_ma, int pro_precio_venta_me, int pro_stock_ma, int pro_stock_me, int mar_codigo, int cat_codigo, int tipo_codigo) {
+        super(mar_codigo, cat_codigo, tipo_codigo);
         this.pro_codigo_interno = pro_codigo_interno;
         this.pro_codigo_barra = pro_codigo_barra;
         this.pro_nombre = pro_nombre;
@@ -47,11 +47,9 @@ public class Productos  extends Marcas{
         this.pro_stock_me = pro_stock_me;
     }
 
-    
+     
 
-         
-    
-    
+          
     //Getter & Setter
     public int getPro_codigo_interno() {
         return pro_codigo_interno;

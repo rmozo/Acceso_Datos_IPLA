@@ -3,16 +3,22 @@ public class Categorias{
 //Atributos
     private int cat_codigo;
     private String cat_nombre;
+    
+    
 //Constructores
     public Categorias() {
     }
+
+    public Categorias(int cat_codigo) {
+        this.cat_codigo = cat_codigo;
+    }
+    
     public Categorias(int cat_codigo, String cat_nombre) {
         this.cat_codigo = cat_codigo;
         this.cat_nombre = cat_nombre;
     }
-    
-     
 
+    
     //Getter y Setter
     public int getCat_codigo() {
         return cat_codigo;

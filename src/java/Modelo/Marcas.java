@@ -1,6 +1,6 @@
 package Modelo;
 
-public class Marcas extends Medidas{
+public class Marcas extends Tipo{
     //Atributos
     private int mar_codigo;
     private String mar_nombre;
@@ -9,19 +9,21 @@ public class Marcas extends Medidas{
     public Marcas() {
     }
 
-    public Marcas(int mar_codigo, String mar_nombre) {
+      public Marcas(int mar_codigo, String mar_nombre) {
+          this.mar_codigo = mar_codigo;
+           this.mar_nombre = mar_nombre;
+       }
+
+    public Marcas(int mar_codigo, int tipo_codigo, int cat_codigo) {
+        super(tipo_codigo, cat_codigo);
         this.mar_codigo = mar_codigo;
-        this.mar_nombre = mar_nombre;
     }
 
-    public Marcas(int mar_codigo, String mar_nombre, int tipo_codigo, String tipo_nombre, int cat_codigo, String cat_nombre) {
-        super(tipo_codigo, tipo_nombre, cat_codigo, cat_nombre);
-        this.mar_codigo = mar_codigo;
-        this.mar_nombre = mar_nombre;
-    }
+       
+    
 
     
-    
+        
     //Getter & Setter
     public int getMar_codigo() {
         return mar_codigo;

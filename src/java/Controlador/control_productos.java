@@ -10,7 +10,7 @@ public class control_productos extends Productos{
     control_conexion con=new control_conexion();
     control_marcas mar=new control_marcas();
     control_categorias cat=new control_categorias();
-    control_medidas tipo=new control_medidas();
+    control_tipo tipo=new control_tipo();
     
     //Método para Listar productos
     public ArrayList listar_productos(String buscar)throws Exception{
@@ -32,7 +32,7 @@ public class control_productos extends Productos{
                     res.getInt("pro_precio_venta_ma"),
                     res.getInt("pro_precio_venta_me"),
                     res.getInt("pro_stock_ma"),
-                    res.getInt("pro_stock_me"),
+                    res.getInt("pro_stock_min"),
                     res.getInt("mar_codigo"),
                     res.getInt("cat_codigo"),
                     res.getInt("tipo_codigo")));
