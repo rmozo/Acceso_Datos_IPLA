@@ -51,7 +51,7 @@ public class control_categorias extends Categorias{
     public void agregar() throws Exception{
         con.conectar();
             PreparedStatement datos=con.estado().prepareStatement("INSERT INTO "
-                    + "categorias(cat_nombre) VALUES('"+this.getCat_nombre()+"')");
+                    + "categorias(cat_nombre) VALUES('"+this.getCat_nombre()+"'");
             datos.execute();//commit
         con.cerrar();
     }

@@ -13,12 +13,12 @@
         <servlet-class>Servlet.Servlet_Marcas</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Servlet_Medidas</servlet-name>
-        <servlet-class>Servlet.Servlet_Tipo</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>Servlet_Proveedores</servlet-name>
         <servlet-class>Servlet.Servlet_Proveedores</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Servlet_Tipo</servlet-name>
+        <servlet-class>Servlet.Servlet_Tipo</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Servlet_Datos</servlet-name>
@@ -33,12 +33,12 @@
         <url-pattern>/Servlet_Marcas</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Servlet_Medidas</servlet-name>
-        <url-pattern>/Servlet_Medidas</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>Servlet_Proveedores</servlet-name>
         <url-pattern>/Servlet_Proveedores</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Servlet_Tipo</servlet-name>
+        <url-pattern>/Servlet_Tipo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

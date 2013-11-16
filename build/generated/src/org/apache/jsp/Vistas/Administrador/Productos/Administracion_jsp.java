@@ -100,7 +100,7 @@ public final class Administracion_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\t\t<div class=\"row\">\n");
       out.write("\t\t\t<!-- Menu -->\n");
       out.write("\t\t\t<div class=\"large-4 columns\">\n");
-      out.write("                            <img src=\"../../../Images/icono.png\" width=\"128\" height=\"128\" alt=\"icono\"/>\n");
+      out.write("                            <img src=\"../../../Images/carrito.png\" width=\"128\" height=\"128\" alt=\"icono\"/>\n");
       out.write("\n");
       out.write("                        </div>\n");
       out.write("            <div class=\"large-8 columns\">\n");

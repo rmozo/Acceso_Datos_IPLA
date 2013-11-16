@@ -94,14 +94,14 @@
                         <th colspan="3">Operaciones</th> 
                     </tr>
                     <% for(Tipo c:lista){%>        
-                    <tr>
+                    <tr align="center">
                         <td><% out.println(c.getTipo_codigo());%></td>
                         <td><% out.println(c.getTipo_nombre());%></td>
-                        <td><a href="#"></a><img src="../../../Images/detail.png" alt="Detalle"/>
+                        <td><a href="#"></a><img src="../../../Images/detalle.png" width="30" height="30" alt="Detalle"/>
                         </td>
-                        <td><a href="#"><img src="../../../Images/edit.png" alt="Editar"/>
+                        <td><a href="#"><img src="../../../Images/editar.png" width="30" height="30" alt="Editar"/>
                             </a></td>
-                            <td><a href="#"><img src="../../../Images/delete.jpg" alt="Eliminar"/>
+                            <td><a href="#"><img src="../../../Images/delete.png" width="30" height="30" alt="Eliminar"/>
                                 </a></td>
                     </tr>
                     <% }%>

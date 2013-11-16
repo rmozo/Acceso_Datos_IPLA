@@ -23,7 +23,7 @@ public class control_proveedores extends Proveedores{
     }
     
     //Método para editar categorias
-    public void editar_categorias(String v1, String v2)throws Exception{
+    public void editar_proveedores(String v1, String v2)throws Exception{
         ArrayList<Proveedores> lista=new ArrayList<>();
         con.conectar();
         PreparedStatement datos=

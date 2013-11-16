@@ -28,7 +28,7 @@ CREATE TABLE `categorias` (
 
 /*Data for the table `categorias` */
 
-insert  into `categorias`(`cat_codigo`,`cat_nombre`) values (1,'Eléctronica'),(2,'Computación'),(3,'Linea Blanca'),(4,'cnekcnlcnscs');
+insert  into `categorias`(`cat_codigo`,`cat_nombre`) values (1,'Eléctronica'),(2,'Computación'),(4,'Categoria 2');
 
 /*Table structure for table `comunas` */
 
@@ -68,25 +68,11 @@ CREATE TABLE `marcas` (
   `mar_codigo` int(3) NOT NULL AUTO_INCREMENT,
   `mar_nombre` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`mar_codigo`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `marcas` */
 
-insert  into `marcas`(`mar_codigo`,`mar_nombre`) values (1,'Lenovo'),(2,'Samsung'),(3,'Mademsa');
-
-/*Table structure for table `medidas` */
-
-DROP TABLE IF EXISTS `medidas`;
-
-CREATE TABLE `medidas` (
-  `tipo_codigo` int(3) NOT NULL AUTO_INCREMENT,
-  `tipo_nombre` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`tipo_codigo`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-/*Data for the table `medidas` */
-
-insert  into `medidas`(`tipo_codigo`,`tipo_nombre`) values (1,'Medida1'),(2,'Medida2');
+insert  into `marcas`(`mar_codigo`,`mar_nombre`) values (1,'Lenovo'),(2,'Samsung'),(4,'Marca1'),(5,'khgkhgkhghk');
 
 /*Table structure for table `perfiles` */
 
@@ -143,6 +129,8 @@ CREATE TABLE `producto_proveedor` (
 
 /*Data for the table `producto_proveedor` */
 
+insert  into `producto_proveedor`(`pro_codigo_barra`,`pro_codigo_interno`,`prov_codigo`) values ('123456789','123',1);
+
 /*Table structure for table `productos` */
 
 DROP TABLE IF EXISTS `productos`;
@@ -161,19 +149,19 @@ CREATE TABLE `productos` (
   `pro_stock_min` int(2) NOT NULL,
   `mar_codigo` int(3) NOT NULL,
   `cat_codigo` int(3) NOT NULL,
-  `med_codigo` int(3) NOT NULL,
+  `tipo_codigo` int(3) NOT NULL,
   PRIMARY KEY (`pro_codigo_interno`,`pro_codigo_barra`),
   UNIQUE KEY `FK4_productos` (`pro_codigo_barra`),
   KEY `FK_productos` (`mar_codigo`),
   KEY `FK2_productos` (`cat_codigo`),
-  KEY `FK3_productos` (`med_codigo`),
   CONSTRAINT `FK2_productos` FOREIGN KEY (`cat_codigo`) REFERENCES `categorias` (`cat_codigo`),
-  CONSTRAINT `FK3_productos` FOREIGN KEY (`med_codigo`) REFERENCES `medidas` (`tipo_codigo`),
   CONSTRAINT `FK4_productos` FOREIGN KEY (`pro_codigo_barra`) REFERENCES `producto_proveedor` (`pro_codigo_barra`),
   CONSTRAINT `FK_productos` FOREIGN KEY (`mar_codigo`) REFERENCES `marcas` (`mar_codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `productos` */
+
+insert  into `productos`(`pro_codigo_interno`,`pro_codigo_barra`,`pro_nombre`,`pro_descripcion`,`pro_precio_c`,`pro_margen_utilidad_ma`,`pro_margen_utilidad_me`,`pro_precio_venta_ma`,`pro_precio_venta_me`,`pro_stock_ma`,`pro_stock_min`,`mar_codigo`,`cat_codigo`,`tipo_codigo`) values ('123','123456789','producto1','producto uno de prueba',6000,3000,2500,3000,2000,5000,3,1,2,1);
 
 /*Table structure for table `proveedores` */
 
@@ -192,9 +180,25 @@ CREATE TABLE `proveedores` (
   PRIMARY KEY (`prov_codigo`),
   KEY `FK_proveedores` (`com_codigo`),
   CONSTRAINT `FK_proveedores` FOREIGN KEY (`com_codigo`) REFERENCES `comunas` (`com_codigo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `proveedores` */
+
+insert  into `proveedores`(`prov_codigo`,`prov_razon_social`,`prov_nombre`,`prov_direccion`,`com_codigo`,`prov_telefono1`,`prov_telefono2`,`prov_email`,`prov_web`) values (1,'Proveedor de','proveedor 1','camilo henriquez 84',1,'1234567','9876543','aa@bb.cc','www.proveedor.cl');
+
+/*Table structure for table `tipo` */
+
+DROP TABLE IF EXISTS `tipo`;
+
+CREATE TABLE `tipo` (
+  `tipo_codigo` int(3) NOT NULL AUTO_INCREMENT,
+  `tipo_nombre` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`tipo_codigo`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*Data for the table `tipo` */
+
+insert  into `tipo`(`tipo_codigo`,`tipo_nombre`) values (1,'Tipo1'),(2,'Tipo2'),(3,'Tipo3');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
