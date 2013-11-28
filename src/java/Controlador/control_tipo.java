@@ -9,7 +9,7 @@ public class control_tipo extends Tipo{
     //Instancia a control_conexion
     control_conexion con=new control_conexion();
     
-    //Método para buscar tipo
+    //Método para buscar Tipos
     public String buscar_tipo(int buscar)throws Exception{
         ArrayList<Tipo> lista=new ArrayList<>();
         con.conectar();
@@ -28,12 +28,11 @@ public class control_tipo extends Tipo{
         con.conectar();
         PreparedStatement datos=
           con.estado().prepareStatement("UPDATE tipo "
-                + "SET tipo_nombre='"+v2+"' WHERE tipot_codigo='"+v1+"'");
+                + "SET tipo_nombre='"+v2+"' WHERE tipo_codigo='"+v1+"'");
         datos.executeQuery();
         con.cerrar();
     }
     
-    //Método para Listar categorias
     public ArrayList listar_tipo(String buscar)throws Exception{
         ArrayList<Tipo> lista=new ArrayList<>();
         con.conectar();
@@ -47,12 +46,12 @@ public class control_tipo extends Tipo{
                     res.getString("tipo_nombre")));
         return lista;
     }
-        
+    
     //Metodo para AGREGAR
     public void agregar() throws Exception{
         con.conectar();
             PreparedStatement datos=con.estado().prepareStatement("INSERT INTO "
-                    + "tipo (tipo_nombre) VALUES ('"+this.getTipo_nombre()+"'");
+                    + "tipo (tipo_nombre) VALUES('"+this.getTipo_nombre()+"'");
             datos.execute();//commit
         con.cerrar();
     }

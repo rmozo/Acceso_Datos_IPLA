@@ -84,7 +84,8 @@ public class Servlet_Tipo extends HttpServlet {
                 String v1=request.getParameter("v1");
                 String v2=request.getParameter("v2");
                 tipo.editar_tipo(v1,v2);
-                response.sendRedirect("Vistas/Administrador/Productos/Tipo.jsp");
+                out.println("<meta http-equiv='refresh' content='2;url=Vistas/Administrador/Productos/Administracion.jsp'/>");
+                out.println("<div class='panel' align='center'><h2>Datos Modificados</h2></div>");
             }
         } catch (Exception ex) {
             Logger.getLogger(Servlet_Categorias.class.getName()).log(Level.SEVERE, null, ex);

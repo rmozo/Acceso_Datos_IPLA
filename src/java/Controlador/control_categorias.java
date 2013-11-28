@@ -24,12 +24,10 @@ public class control_categorias extends Categorias{
     
     //Método para editar categorias
     public void editar_categorias(String v1, String v2)throws Exception{
-        ArrayList<Categorias> lista=new ArrayList<>();
-        con.conectar();
-        PreparedStatement datos=
-          con.estado().prepareStatement("UPDATE categorias "
+       con.conectar();
+        PreparedStatement datos=con.estado().prepareStatement("UPDATE categorias "
                 + "SET cat_nombre='"+v2+"' WHERE cat_codigo='"+v1+"'");
-        datos.executeQuery();
+        datos.execute();
         con.cerrar();
     }
     
@@ -51,7 +49,7 @@ public class control_categorias extends Categorias{
     public void agregar() throws Exception{
         con.conectar();
             PreparedStatement datos=con.estado().prepareStatement("INSERT INTO "
-                    + "categorias(cat_nombre) VALUES('"+this.getCat_nombre()+"'");
+                    + " categorias(cat_nombre) VALUES ('"+this.getCat_nombre()+"'");
             datos.execute();//commit
         con.cerrar();
     }
@@ -65,14 +63,6 @@ public class control_categorias extends Categorias{
         con.cerrar();
     }
     
-    //Metodo para Modificar
-    public void modificar() throws Exception{
-        con.conectar();
-            PreparedStatement datos=con.estado().prepareStatement("UPDATE categorias "
-                    + "SET cat_nombre='"+this.getCat_nombre()+"' "
-                    + "WHERE cat_codigo='"+this.getCat_codigo()+"'");
-            datos.execute();//commit
-        con.cerrar();
-    }
+    
     
 }   

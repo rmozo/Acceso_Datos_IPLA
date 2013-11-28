@@ -46,12 +46,24 @@ public class Servlet_Marcas extends HttpServlet {
           //      out.println("<meta http-equiv='refresh' content='2;url=Vistas/Administrador/Productos/Administracion.jsp'/>");
           //      out.println("<div class='panel' align='center'><h2>Datos Almacenados</h2></div>");
             }
-            else if(id==3){
-                int v1=Integer.parseInt(request.getParameter("mar_codigo"));
-                marca.setMar_codigo(v1);
-                marca.modificar();
-                out.println("<meta http-equiv='refresh' content='2;url=Vistas/Administrador/Productos/Administracion.jsp'/>");
-                out.println("<div class='panel' align='center'><h2>Datos Eliminados</h2></div>");
+            else if(id==3){//buscar
+                int cod=Integer.parseInt(request.getParameter("cat_codigo"));
+                out.print(marca.buscar_marcas(cod));
+                out.print("<form method=post action=Servlet_Marcas?id=5>");
+                    out.print("<table>");
+                        out.print("<tr>");
+                            out.print("<td>Codigo</td>");
+                            out.print("<td><input type=text name=v1 value="+cod+" readonly/></td>");
+                        out.print("</tr>");
+                        out.print("<tr>");
+                            out.print("<td>Nombre</td>");
+                            out.print("<td><input type=text name=v2 value='"+marca.buscar_marcas(cod)+"'></td>");
+                        out.print("</tr>");
+                        out.print("<tr>");
+                            out.print("<td><input type=submit value=Editar></td>");
+                        out.print("</tr>");
+                    out.print("</table>");
+                out.print("</form>");
             }
             else if(id==4){
                 int v1=Integer.parseInt(request.getParameter("mar_codigo"));
@@ -59,6 +71,13 @@ public class Servlet_Marcas extends HttpServlet {
                 marca.eliminar();
                 out.println("<meta http-equiv='refresh' content='2;url=Vistas/Administrador/Productos/Administracion.jsp'/>");
                 out.println("<div class='panel' align='center'><h2>Datos Eliminados</h2></div>");
+            }
+            else if(id==5){//Editar
+                String v1=request.getParameter("v1");
+                String v2=request.getParameter("v2");
+                marca.editar_marcas(v1,v2);
+                out.println("<meta http-equiv='refresh' content='2;url=Vistas/Administrador/Productos/Administracion.jsp'/>");
+                out.println("<div class='panel' align='center'><h2>Datos Modificados</h2></div>");
             }
         } catch (Exception ex) {
             Logger.getLogger(Servlet_Marcas.class.getName()).log(Level.SEVERE, null, ex);

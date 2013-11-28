@@ -56,7 +56,9 @@
     </script>
 </head>
     <body>
-        <% 
+        <% String buscar=request.getParameter("buscar");
+            if (buscar==null)
+                buscar="";
             control_tipo tipo=new control_tipo();
             ArrayList<Tipo> lista=new ArrayList<Tipo>();
             lista=tipo.listar_tipo("");
@@ -66,7 +68,7 @@
                 <h3>Gestión de Tipos</h3>
             </div>
             <div class="large-4 columns">
-                <form method="get">
+                <form action="Tipo.jsp" method="get">
                     <table>
                        <tr>
                            <td> 
@@ -97,11 +99,11 @@
                     <tr align="center">
                         <td><% out.println(c.getTipo_codigo());%></td>
                         <td><% out.println(c.getTipo_nombre());%></td>
-                        <td><a href="#"></a><img src="../../../Images/detalle.png" width="30" height="30" alt="Detalle"/>
+                        <td><a href="../../../Servlet_Tipo?id=2&tipo_codigo=<%out.print(c.getTipo_codigo());%>"></a><img src="../../../Images/detalle.png" width="30" height="30" title="Detalle"/>
                         </td>
-                        <td><a href="#"><img src="../../../Images/editar.png" width="30" height="30" alt="Editar"/>
+                        <td><a href="../../../Servlet_Tipo?id=3&tipo_codigo=<%out.print(c.getTipo_codigo());%>"><img src="../../../Images/editar.png" width="30" height="30" title="Editar"/>
                             </a></td>
-                            <td><a href="#"><img src="../../../Images/delete.png" width="30" height="30" alt="Eliminar"/>
+                            <td><a href="../../../Servlet_Tipo?id=4&tipo_codigo=<%out.print(c.getTipo_codigo());%>"><img src="../../../Images/delete.png" width="30" height="30" title="Eliminar"/>
                                 </a></td>
                     </tr>
                     <% }%>

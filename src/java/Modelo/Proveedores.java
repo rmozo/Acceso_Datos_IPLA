@@ -1,25 +1,28 @@
 package Modelo;
 
 public class Proveedores extends Comunas{
-    private int prov_codigo;
-    private String prov_razon_social;
-    private String prov_nombre;
-    private String prov_direccion;
-    private String prov_telefono1;
-    private String prov_telefono2;
-    private String prov_email;
-    private String prov_web;
+    //Atributos
+    public String prov_codigo;
+    public String prov_razon_social;
+    public String prov_nombre;
+    public String prov_direccion;    
+    public String prov_telefono1;
+    public String prov_telefono2;
+    public String prov_email;
+    public String prov_web;
+
     
     //Constructores
     public Proveedores() {
     }
 
-    public Proveedores(int prov_codigo, String prov_nombre) {
+    public Proveedores(String prov_codigo, String prov_nombre) {
         this.prov_codigo = prov_codigo;
         this.prov_nombre = prov_nombre;
     }
 
-    public Proveedores(int prov_codigo, String prov_razon_social, String prov_nombre, String prov_direccion, String prov_telefono1, String prov_telefono2, String prov_email, String prov_web) {
+    public Proveedores(String prov_codigo, String prov_razon_social, String prov_nombre, String prov_direccion, String prov_telefono1, String prov_telefono2, String prov_email, String prov_web, int com_codigo) {
+        super(com_codigo);
         this.prov_codigo = prov_codigo;
         this.prov_razon_social = prov_razon_social;
         this.prov_nombre = prov_nombre;
@@ -30,7 +33,18 @@ public class Proveedores extends Comunas{
         this.prov_web = prov_web;
     }
 
-    public Proveedores(int prov_codigo, String prov_razon_social, String prov_nombre, String prov_direccion, String prov_telefono1, String prov_telefono2, String prov_email, String prov_web, int com_codigo) {
+    public Proveedores(String prov_codigo, String prov_razon_social, String prov_nombre, String prov_direccion, String prov_telefono1, String prov_telefono2, String prov_email, String prov_web) {
+        this.prov_codigo = prov_codigo;
+        this.prov_razon_social = prov_razon_social;
+        this.prov_nombre = prov_nombre;
+        this.prov_direccion = prov_direccion;
+        this.prov_telefono1 = prov_telefono1;
+        this.prov_telefono2 = prov_telefono2;
+        this.prov_email = prov_email;
+        this.prov_web = prov_web;
+    }
+
+    public Proveedores(String prov_codigo, String prov_razon_social, String prov_nombre, String prov_direccion,int com_codigo, String prov_telefono1, String prov_telefono2, String prov_email, String prov_web) {
         super(com_codigo);
         this.prov_codigo = prov_codigo;
         this.prov_razon_social = prov_razon_social;
@@ -45,11 +59,11 @@ public class Proveedores extends Comunas{
 
           
     //Getter & Setter
-    public int getProv_codigo() {
+    public String getProv_codigo() {
         return prov_codigo;
     }
 
-    public void setProv_codigo(int prov_codigo) {
+    public void setProv_codigo(String prov_codigo) {
         this.prov_codigo = prov_codigo;
     }
 

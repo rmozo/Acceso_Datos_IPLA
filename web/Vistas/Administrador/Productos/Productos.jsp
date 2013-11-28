@@ -56,7 +56,9 @@
     </script>
 </head>
     <body>
-        <% 
+        <% String buscar=request.getParameter("buscar");
+            if (buscar==null)
+                buscar="";
             control_productos cat=new control_productos();
             ArrayList<Productos> lista=new ArrayList<Productos>();
             lista=cat.listar_productos("");
@@ -97,11 +99,11 @@
                     <tr align="center">
                         <td><% out.println(c.getPro_codigo_interno());%></td>
                         <td><% out.println(c.getPro_descripcion());%></td>
-                        <td><a href="../../../Servlet_Productos?id=2&cat_codigo=<%out.print(c.getPro_codigo_interno());%>"></a><img src="../../../Images/detalle.png" width="30" height="30" alt="Detalle"/>
+                        <td><a href="../../../Servlet_Productos?id=2&pro_codigo=<%out.print(c.getPro_codigo_interno());%>"></a><img src="../../../Images/detalle.png" width="30" height="30" alt="Detalle"/>
                         </td>
-                        <td><a href="javascript:Enviar('Productos_edit.jsp?cat_codigo=<%out.print(c.getPro_codigo_interno());%>','contenedor')"><img src="../../../Images/editar.png" width="30" height="30" alt="Editar"/>
+                        <td><a href="../../../Servlet_Productos?id=3&pro_codigo=<%out.print(c.getPro_codigo_interno());%>','contenedor')"><img src="../../../Images/editar.png" width="30" height="30" alt="Editar"/>
                             </a></td>
-                            <td><a href="../../../Servlet_Categorias?id=4&cat_codigo=<%out.print(c.getPro_codigo_interno());%>"><img src="../../../Images/delete.png" width="30" height="30" alt="Eliminar"/>
+                            <td><a href="../../../Servlet_Categorias?id=4&pro_codigo=<%out.print(c.getPro_codigo_interno());%>"><img src="../../../Images/delete.png" width="30" height="30" alt="Eliminar"/>
                                 </a></td>
                     </tr>
                     <% }%>

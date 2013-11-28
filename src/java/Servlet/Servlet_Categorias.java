@@ -38,7 +38,8 @@ public class Servlet_Categorias extends HttpServlet {
                 cat.agregar();
                 out.println("<meta http-equiv='refresh' content='2;url=Vistas/Administrador/Productos/Administracion.jsp'/>");
                 out.println("<div class='panel' align='center'><h2>Datos Almacenados</h2></div>");
-            }//detalle
+            }
+            //detalle
        //     else if(id==2){
        //         int v1=Integer.parseInt(request.getParameter("cat_codigo"));
        //         cat.setCat_codigo(v1);
@@ -76,7 +77,8 @@ public class Servlet_Categorias extends HttpServlet {
                 String v1=request.getParameter("v1");
                 String v2=request.getParameter("v2");
                 cat.editar_categorias(v1,v2);
-                response.sendRedirect("Vistas/Administrador/Productos/Categorias.jsp");
+                out.println("<meta http-equiv='refresh' content='2;url=Vistas/Administrador/Productos/Administracion.jsp'/>");
+                out.println("<div class='panel' align='center'><h2>Datos Modificados</h2></div>");
             }
         } catch (Exception ex) {
             Logger.getLogger(Servlet_Categorias.class.getName()).log(Level.SEVERE, null, ex);

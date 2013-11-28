@@ -100,11 +100,11 @@
                     <tr align="center">
                         <td><% out.println(c.getCat_codigo());%></td>
                         <td><% out.println(c.getCat_nombre());%></td>
-                        <td><a href="../../../Servlet_Categorias?id=2&cat_codigo=<%out.print(c.getCat_codigo());%>"></a><img src="../../../Images/detalle.png" width="30" height="30" alt="Detalle"/>
+                        <td><a href="../../../Servlet_Categorias?id=2&cat_codigo=<%out.print(c.getCat_codigo());%>"></a><img src="../../../Images/detalle.png" width="30" height="30" title="Detalle"/>
                         </td>
-                        <td><a href="../../../Servlet_Categorias?id=3&cat_codigo=<%out.print(c.getCat_codigo());%>"><img src="../../../Images/editar.png" width="30" height="30" alt="Editar"/>
+                        <td><a href="../../../Servlet_Categorias?id=3&cat_codigo=<%out.print(c.getCat_codigo());%>"><img src="../../../Images/editar.png" width="30" height="30" title="Editar"/>
                             </a></td>
-                            <td><a href="../../../Servlet_Categorias?id=4&cat_codigo=<%out.print(c.getCat_codigo());%>"><img src="../../../Images/delete.png" width="30" height="30" alt="Eliminar"/>
+                            <td><a href="../../../Servlet_Categorias?id=4&cat_codigo=<%out.print(c.getCat_codigo());%>"><img src="../../../Images/delete.png" width="30" height="30" title="Eliminar"/>
 
                                 </a></td>
                     </tr>

@@ -56,7 +56,9 @@
     </script>
 </head>
     <body>
-        <% 
+        <% String buscar=request.getParameter("buscar");
+            if (buscar==null)
+                buscar="";
             control_proveedores prov=new control_proveedores();
             ArrayList<Proveedores> lista=new ArrayList<Proveedores>();
             lista=prov.listar_proveedores("");

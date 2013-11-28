@@ -56,7 +56,9 @@
     </script>
 </head>
     <body>
-        <% 
+        <% String buscar=request.getParameter("buscar");
+            if (buscar==null)
+                buscar="";
             control_marcas mar=new control_marcas();
             ArrayList<Marcas> lista=new ArrayList<Marcas>();
             lista=mar.listar_marcas("");
@@ -66,7 +68,7 @@
                 <h3>Gestión de Marcas</h3>
             </div>
             <div class="large-4 columns">
-                <form method="get">
+                <form action="Marcas.jsp" method="get">
                     <table>
                        <tr>
                            <td> 
@@ -97,11 +99,11 @@
                     <tr align="center">
                         <td><% out.println(m.getMar_codigo());%></td>
                         <td><% out.println(m.getMar_nombre());%></td>
-                        <td><a href="#"></a><img src="../../../Images/detalle.png" width="30" height="30" alt="Detalle"/>
+                        <td><a href="../../../Servlet_Marcas?id=2&mar_codigo=<%out.print(m.getMar_codigo());%>"></a><img src="../../../Images/detalle.png" width="30" height="30" title="Detalle"/>
                         </td>
-                        <td><a href="javascript:Enviar('Marcas_edit.jsp?mar_codigo=<%out.print(m.getMar_codigo());%>','contenedor')#"><img src="../../../Images/editar.png" width="30" height="30" alt="Editar"/>
+                        <td><a href="../../../Servlet_Marcas?id=3&mar_codigo=<%out.print(m.getMar_codigo());%>"><img src="../../../Images/editar.png" width="30" height="30" title="Editar"/>
                             </a></td>
-                            <td><a href="../../../Servlet_Marcas?id=4&mar_codigo=<%out.print(m.getMar_codigo());%>"><img src="../../../Images/delete.png" width="30" height="30" alt="Eliminar"/>
+                            <td><a href="../../../Servlet_Marcas?id=4&mar_codigo=<%out.print(m.getMar_codigo());%>"><img src="../../../Images/delete.png" width="30" height="30" title="Eliminar"/>
                                 </a></td>
                     </tr>
                     <% }%>

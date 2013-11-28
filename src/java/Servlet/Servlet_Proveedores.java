@@ -47,12 +47,12 @@ public class Servlet_Proveedores extends HttpServlet {
                 out.println("<meta http-equiv='refresh' content='2;url=Vistas/Administrador/Productos/Administracion.jsp'/>");
                 out.println("<div class='panel' align='center'><h2>Datos Almacenados</h2></div>");
             }//detalle
-            else if(id==2){
-                int v1=Integer.parseInt(request.getParameter("prov_codigo"));
-                prov.setProv_codigo(v1);
-                prov.listar_proveedores("v1");
-                out.println("<meta http-equiv='refresh' content='2;url=Vistas/Administrador/Productos/Administracion.jsp'/>");
-            }
+     //       else if(id==2){
+     //           int v1=Integer.parseInt(request.getParameter("prov_codigo"));
+     //           prov.setProv_codigo(v1);
+     //           prov.listar_proveedores("v1");
+     //           out.println("<meta http-equiv='refresh' content='2;url=Vistas/Administrador/Productos/Administracion.jsp'/>");
+     //       }
             else if(id==3){//buscar
                 int cod=Integer.parseInt(request.getParameter("prov_codigo"));
                 out.print(prov.buscar_proveedores(cod));
@@ -75,7 +75,7 @@ public class Servlet_Proveedores extends HttpServlet {
             }//Eliminar
             else if(id==4){
                 int v1=Integer.parseInt(request.getParameter("prov_codigo"));
-                prov.setProv_codigo(v1);
+                prov.setProv_codigo("V1");
                 prov.eliminar();
                 out.println("<meta http-equiv='refresh' content='2;url=Vistas/Administrador/Productos/Administracion.jsp'/>");
                 out.println("<div class='panel' align='center'><h2>Datos Eliminados</h2></div>");
